@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="div__image--container">
     <img v-for="(image, index) in images" :key="index" :src="image.urls.small"/>
   </div>
 </template>
@@ -25,18 +25,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.div__image--container {
+  column-count: 3;
+  column-gap: 2%
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
+
+img {
   display: inline-block;
-  margin: 0 10px;
+  padding: 10px
 }
-a {
-  color: #42b983;
-}
+
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="hello">
-    <p>This should be the container...</p>
+  <div>
+    <img v-for="(image, index) in images" :key="index" :src="image.urls.small"/>
   </div>
 </template>
 
@@ -10,10 +10,15 @@ export default {
   props: {
     msg: String
   },
-  methods: {
-    },
+  data() {
+    return {
+      images: null,
+      }
+  },
   mounted() {
-    console.log('HI')
+    fetch('https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=fun')
+      .then(response => response.json())
+      .then(data => this.images = data.results)
   }
 }
 </script>

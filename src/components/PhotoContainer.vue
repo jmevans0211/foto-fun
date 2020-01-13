@@ -16,7 +16,7 @@ export default {
       }
   },
   mounted() {
-    fetch('https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=fun')
+    fetch('https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=colorado')
       .then(response => response.json())
       .then(data => this.images = data.results)
   }

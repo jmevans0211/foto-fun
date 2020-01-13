@@ -9,6 +9,11 @@ export default {
   name: 'PhotoContainer',
   props: {
     msg: String
+  },
+  methods: {
+    },
+  mounted() {
+    console.log('HI')
   }
 }
 </script>

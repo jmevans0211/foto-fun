@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
-    <p>This should be the nav...</p>
+    <p>Foto Fun</p>
+    <input />
+    <button v-on:click='getData'>Search</button>
+    <p>{{ test }}</p>
   </div>
 </template>
 
@@ -9,6 +12,17 @@ export default {
   name: 'Nav',
   props: {
     msg: String
+  },
+  data () {
+    return {
+      log: 'in data object',
+      test: 0,
+    }
+  },
+  methods: {
+    getData: function () {
+      this.test +=1
+    }
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="div__image--container">
-    <p v-if="images.length === 0">🧐Hmm, we aren't coming up with any images related to that search.</p>
+    <p v-if="images.length === 0">🧐Hmm, we aren't finding any images related to that search.</p>
     <img v-for="(image, index) in this.images" :key="index" :src="image.urls.small"/>
   </div>
 </template>

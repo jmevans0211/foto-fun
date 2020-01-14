@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Nav msg="Welcome to Your Vue.js App"/>
+    <Nav @searchInput="searchWithInput"/>
     <PhotoContainer v-bind:images="images"/>
   </div>
 </template>
@@ -18,6 +18,11 @@ export default {
   data() {
     return {
       images: null,
+    }
+  },
+  methods: {
+    searchWithInput: function () {
+      console.log('WORKED')
     }
   },
   mounted() {

@@ -21,8 +21,8 @@ export default {
     }
   },
   methods: {
-    searchWithInput: function () {
-      console.log('WORKED')
+    searchWithInput: function (input) {
+      console.log('input--->', input)
     }
   },
   mounted() {

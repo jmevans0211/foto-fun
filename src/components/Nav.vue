@@ -1,8 +1,8 @@
 <template>
   <div class="nav">
     <p>Foto Fun</p>
-    <input />
-    <button v-on:click='getData'>Search</button>
+    <input v-model.lazy="input"/>
+    <button v-on:click="getData">Search</button>
   </div>
 </template>
 
@@ -14,12 +14,12 @@ export default {
   },
   data () {
     return {
-      log: 'in data object',
+      input: '',
     }
   },
   methods: {
     getData: function () {
-      this.$emit('searchInput')
+      this.$emit('searchInput', this.input)
     }
   }
 }

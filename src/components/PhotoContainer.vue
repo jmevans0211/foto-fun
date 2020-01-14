@@ -1,6 +1,6 @@
 <template>
   <div class="div__image--container">
-    <img v-for="(image, index) in images" :key="index" :src="image.urls.small"/>
+    <img v-for="(image, index) in this.images" :key="index" :src="image.urls.small"/>
   </div>
 </template>
 
@@ -8,18 +8,18 @@
 export default {
   name: 'PhotoContainer',
   props: {
-    msg: String
+    images: Array
   },
-  data() {
-    return {
-      images: null,
-      }
-  },
-  mounted() {
-    fetch('https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=colorado')
-      .then(response => response.json())
-      .then(data => this.images = data.results)
-  }
+  // data() {
+  //   return {
+  //     images: null,
+  //     }
+  // },
+  // mounted() {
+  //   fetch('https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=fun')
+  //     .then(response => response.json())
+  //     .then(data => this.images = data.results)
+  // }
 }
 </script>
 

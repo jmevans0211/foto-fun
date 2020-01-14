@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Nav msg="Welcome to Your Vue.js App"/>
-    <PhotoContainer />
+    <Nav @searchInput="searchWithInput"/>
+    <PhotoContainer v-bind:images="images"/>
   </div>
 </template>
 
@@ -14,6 +14,23 @@ export default {
   components: {
     Nav,
     PhotoContainer
+  },
+  data() {
+    return {
+      images: null,
+    }
+  },
+  methods: {
+    searchWithInput: function (input) {
+      fetch(`https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=${input}`)
+        .then(response => response.json())
+        .then(data => this.images = data.results)
+    }
+  },
+  mounted() {
+    fetch('https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=fun')
+      .then(response => response.json())
+      .then(data => this.images = data.results)
   }
 }
 </script>

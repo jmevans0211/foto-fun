@@ -1,8 +1,11 @@
 <template>
   <div class="nav">
-    <p>Foto Fun</p>
-    <input v-model.lazy="input"/>
-    <button v-on:click="getData">Search</button>
+    <h1>Foto<span>Finder</span></h1>
+    <div>
+      <input v-model.lazy="input"/>
+      <button v-on:click="getData">Search</button>
+      <p v-if="errorMessage">Please enter something into your search input</p>
+    </div>
     <div>
       <button v-on:click="increaseImageAmount">+</button>
       <p>{{this.imageAmount}}</p>
@@ -21,11 +24,17 @@ export default {
     return {
       input: '',
       imageAmount: 20,
+      errorMessage: false
     }
   },
   methods: {
     getData: function () {
-      this.$emit('searchInput', this.input, this.imageAmount)
+      if (this.input === '') {
+        this.errorMessage = true
+      } else {
+        this.errorMessage = false
+        this.$emit('searchInput', this.input, this.imageAmount)
+      }
     },
     increaseImageAmount: function () {
       if (this.imageAmount < 30) {

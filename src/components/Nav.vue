@@ -6,11 +6,6 @@
       <button v-on:click="getData">Search</button>
       <p v-if="errorMessage">Please enter something into your search input</p>
     </div>
-    <div>
-      <button v-on:click="increaseImageAmount">+</button>
-      <p>{{this.imageAmount}}</p>
-      <button v-on:click="decreaseImageAmount">-</button>
-    </div>
   </div>
 </template>
 
@@ -33,25 +28,40 @@ export default {
         this.errorMessage = true
       } else {
         this.errorMessage = false
-        this.$emit('searchInput', this.input, this.imageAmount)
+        this.$emit('searchInput', this.input)
       }
-    },
-    increaseImageAmount: function () {
-      if (this.imageAmount < 30) {
-        this.imageAmount += 5
-      }
-    },
-    decreaseImageAmount: function () {
-      if (this.imageAmount >= 10) {
-        this.imageAmount -= 5
-      }
-    }  
+    }, 
   }
 }
 </script>
 
 <style scoped>
-  .nav {
-    font-size: 40px;
+  h1 {
+    font-size: 85px;
+    margin-bottom: 20px;
   }
+  h1 span {
+    color: #f72a57;
+  }
+  .nav div {
+    height: 50px;
+    margin-bottom: 50px
+  }
+  input {
+    color: #f72a57;
+    font-size: 20px;
+    height: 100%;
+    padding-left: 6px;
+    margin-right: 5px;
+    width: 20%;
+  }
+button {
+    background-color: #f72a57;
+    color: whitesmoke;
+    font-size: 30px;
+    height: 111%;
+    margin-left: 5px;
+    transform: translateY(5%);
+    width: 20%;
+}
 </style>

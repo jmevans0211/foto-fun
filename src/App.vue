@@ -18,12 +18,12 @@ export default {
   data() {
     return {
       images: null,
-
+      imageAmount: 20
     }
   },
   methods: {
-    searchWithInput: function (input, imageAmount) {
-      fetch(`https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=${input}&per_page=${imageAmount}`)
+    searchWithInput: function (input) {
+      fetch(`https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=${input}&per_page=${this.imageAmount}`)
         .then(response => response.json())
         .then(data => this.images = data.results)
     }

@@ -56,7 +56,7 @@ export default {
     margin-right: 5px;
     width: 20%;
   }
-button {
+  button {
     background-color: #f72a57;
     color: whitesmoke;
     font-size: 30px;
@@ -65,5 +65,5 @@ button {
     outline: none; 
     transform: translateY(5%);
     width: 20%;
-}
+  }
 </style>

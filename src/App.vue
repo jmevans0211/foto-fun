@@ -2,6 +2,7 @@
   <div id="app">
     <Nav @searchInput="searchWithInput"/>
     <PhotoContainer @fetchMoreImages="searchWithInput" v-bind:images="images"/>
+    <button v-if="this.input != ''">Show more images</button>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ export default {
   data() {
     return {
       images: null,
+      input: ''
     }
   },
   methods: {
@@ -25,6 +27,7 @@ export default {
       fetch(`https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=${input}&per_page=${amount}`)
         .then(response => response.json())
         .then(data => this.images = data.results)
+        .then(this.input = input)
     },
   },
   mounted() {

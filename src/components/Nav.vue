@@ -18,6 +18,7 @@ export default {
   data () {
     return {
       input: '',
+      imageAmount: 20,
       errorMessage: false
     }
   },
@@ -27,7 +28,7 @@ export default {
         this.errorMessage = true
       } else {
         this.errorMessage = false
-        this.$emit('searchInput', this.input, 20)
+        this.$emit('searchInput', this.input, this.imageAmount)
       }
     }, 
   }

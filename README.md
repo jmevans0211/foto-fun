@@ -2,14 +2,15 @@
 
 **Contributor**: Jeannie Evans
 
-[View live site here](https://foto--finder.herokuapp.com/)
+Live Site: https://foto--finder.herokuapp.com/
 
-![FotoFinder gif](./utils/foto-finder.gif)
 
 ### Summary
 
-Foto Finder will show photos based off of a simple search.
+Foto Finder will show photos based off of a simple search. This site uses the Unsplash API.
 
+## Preview
+![FotoFinder gif](./utils/foto-finder.gif)
 
 ## Install locally
 ```

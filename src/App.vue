@@ -23,19 +23,14 @@
     },
     methods: {
       searchWithInput: function (input, amount) {
-        fetch(`https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=${input}&per_page=${amount}`)
+        fetch(`https://api.unsplash.com/search/photos?client_id=${process.env.VUE_APP_API_KEY}&query=${input}&per_page=${amount}`)
           .then(response => response.json())
           .then(data => this.images = data.results)
           .then(this.input = input)
-      },
-      showMoreImages: function () {
-        fetch(`https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=${this.input}&per_page=30`)
-          .then(response => response.json())
-          .then(data => this.images = data.results)
       }
     },
     mounted() {
-      fetch('https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=fun&per_page=20')
+      fetch(`https://api.unsplash.com/search/photos?client_id=${process.env.VUE_APP_API_KEY}&query=fun&per_page=20`)
         .then(response => response.json())
         .then(data => this.images = data.results)
     }

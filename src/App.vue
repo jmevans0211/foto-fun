@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <Nav @searchInput="searchWithInput"/>
-    <PhotoContainer @fetchMoreImages="searchWithInput" v-bind:images="images"/>
-    <button v-if="this.input != ''" v-on:click="showMoreImages">Show more images</button>
+    <Nav @searchInput="searchWithInput" />
+    <PhotoContainer @fetchMoreImages="searchWithInput" v-bind:images="images" />
   </div>
 </template>
 

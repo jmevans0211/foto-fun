@@ -51,6 +51,7 @@ export default {
     color: #f72a57;
     font-size: 20px;
     height: 100%;
+    outline: none; 
     padding-left: 6px;
     margin-right: 5px;
     width: 20%;
@@ -61,6 +62,7 @@ button {
     font-size: 30px;
     height: 111%;
     margin-left: 5px;
+    outline: none; 
     transform: translateY(5%);
     width: 20%;
 }

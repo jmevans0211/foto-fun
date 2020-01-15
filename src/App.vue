@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Nav @searchInput="searchWithInput"/>
-    <PhotoContainer v-bind:images="images"/>
+    <PhotoContainer @fetchMoreImages="searchWithInput" v-bind:images="images"/>
   </div>
 </template>
 
@@ -18,15 +18,14 @@ export default {
   data() {
     return {
       images: null,
-      imageAmount: 20
     }
   },
   methods: {
-    searchWithInput: function (input) {
-      fetch(`https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=${input}&per_page=${this.imageAmount}`)
+    searchWithInput: function (input, amount) {
+      fetch(`https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=${input}&per_page=${amount}`)
         .then(response => response.json())
         .then(data => this.images = data.results)
-    }
+    },
   },
   mounted() {
     fetch('https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=fun&per_page=20')

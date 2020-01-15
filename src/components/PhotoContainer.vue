@@ -4,7 +4,7 @@
       <p v-if="images.length === 0">🧐Hmm, we aren't finding any images related to that search.</p>
       <img v-for="(image, index) in this.images" :key="index" :src="image.urls.small"/>
     </div>
-  <p>Show more</p>
+  <button v-on:click="viewMoreImages">View More Images</button>
   </div>
 </template>
 
@@ -14,7 +14,11 @@ export default {
   props: {
     images: Array
   },
-
+  methods: {
+    viewMoreImages: function () {
+      this.$emit('fetchMoreImages', 30)
+    }
+  }
 }
 </script>
 

@@ -1,38 +1,27 @@
 <template>
   <div class="div__image--container">
+    <p v-if="images.length === 0">🧐Hmm, we aren't finding any images related to that search.</p>
     <img v-for="(image, index) in this.images" :key="index" :src="image.urls.small"/>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'PhotoContainer',
-  props: {
-    images: Array
-  },
-  // data() {
-  //   return {
-  //     images: null,
-  //     }
-  // },
-  // mounted() {
-  //   fetch('https://api.unsplash.com/search/photos?client_id=2615908b6ad30256c4c37c49781519491cecc858f4782d2b06febb07fb3d347b&query=fun')
-  //     .then(response => response.json())
-  //     .then(data => this.images = data.results)
-  // }
+  export default {
+    name: 'PhotoContainer',
+    props: {
+      images: Array
+    }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.div__image--container {
-  column-count: 3;
-  column-gap: 2%
-}
+  .div__image--container {
+    column-count: 3;
+    column-gap: 2%
+  }
 
-img {
-  display: inline-block;
-  padding: 10px
-}
-
+  img {
+    display: inline-block;
+    padding: 10px
+  }
 </style>

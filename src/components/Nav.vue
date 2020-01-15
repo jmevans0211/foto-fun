@@ -59,6 +59,7 @@ export default {
   button {
     background-color: #f72a57;
     color: whitesmoke;
+    cursor: pointer;
     font-size: 30px;
     height: 111%;
     margin-left: 5px;

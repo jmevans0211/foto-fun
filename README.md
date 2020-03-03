@@ -24,6 +24,6 @@ $ npm run serve
 
 ## Later Iterations
  - Allowing the user to search for a specific number of photos
- - Implementing Vuex
+ - Implementing VueX
  - Links to photographers' sites and/or searching for images based off of that photographer
  
